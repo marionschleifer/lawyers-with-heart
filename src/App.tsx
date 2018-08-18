@@ -1,20 +1,27 @@
+import { AccountCircle, Menu as MenuIcon } from '@material-ui/icons';
+import { AppBar, IconButton, Toolbar } from 'material-ui';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
 import './App.css';
-
-import logo from './logo.svg';
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <MuiThemeProvider>
+        <AppBar style={{ backgroundColor: '#e91e63' }}>
+          <Toolbar>
+            <IconButton color="inherit" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+
+            <div>
+              <IconButton color="inherit">
+                <AccountCircle />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </MuiThemeProvider>
     );
   }
 }
